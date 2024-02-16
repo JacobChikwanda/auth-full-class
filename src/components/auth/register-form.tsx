@@ -10,8 +10,8 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { FormError } from '../form-error';
 import { FormSuccess } from '../form-success';
-import { login } from '@/actions/login';
 import { useState, useTransition } from 'react';
+import { register } from '@/actions/register';
 
 const RegisterForm = () => {
 
@@ -33,7 +33,7 @@ const RegisterForm = () => {
         setSuccess("")
         
         startTransition(() => {
-            login(values)
+            register(values)
             .then((data) => {
                 setError(data.error);
                 setSuccess(data.success)
